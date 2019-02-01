@@ -41,7 +41,10 @@ def export(id):
         blockquote.append(cite)
         anchor.insert_after(blockquote)
 
-    print(doc.prettify())
+    filename = thread['thread']['title'] + '.html'
+    with open(filename, 'w') as fp:
+        print(doc.prettify(), file=fp)
+        print('export to ' + filename)
 
 
 if __name__ == "__main__":
