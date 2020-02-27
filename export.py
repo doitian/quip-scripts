@@ -11,7 +11,7 @@ def export(id):
     doc_end = doc.contents[-1]
 
     for m in messages:
-        if m['annotation']:
+        if 'annotation' in m:
             ids = []
             if 'highlight_section_ids' in m['annotation']:
                 ids.extend(m['annotation']['highlight_section_ids'])
